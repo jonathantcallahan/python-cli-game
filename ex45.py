@@ -2,47 +2,10 @@ import game
 from textwrap import dedent
 from random import randint
 
-"""
-There is a castle with a vault full of treasure
-The objective of the game is to sneak through the castle and steal a piece of treasure
-game stage options 
-    climb the castle wall
-        - grapling hook > death
-        - walk through the gate > combat
-        - climb by hand > next stage
-    cross the courtyard without being spotted
-        + speak with peasant
-        - hide in plain sight > death 
-        - stick to the shadows > next stage
-        - corridors > combat
-    choose the right tower
-        - door with a coin > death
-        - unmarked door > next stage
-        - royal seal > combat + return to begining of stage
-    navigate to the vault
-        - move quickly > next stage
-        - take time > combat
-    pick the lock
-        - take down guard > combat
-        - 3 digits 10 attempts
-    escape with the treasure
-        + speak with castle worker
-        - courtyard > death
-        - through vault > win game
-
-
-each stage will have an enter() method that will return a tuple with the next stage, health, game status, and score for the level (higher points for avoiding combat)
-
-Play() class will 
-    automatically start next stage
-    hold state for health
-    allow player to play again
-    potentially time to complete
-"""
-
 class Stage():
     def __init__(self):
         self.game = game.Game()
+        # game module has methods for combat and handling user input
 
     def enter(self):
         pass

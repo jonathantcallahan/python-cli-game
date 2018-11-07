@@ -50,17 +50,17 @@ class Game():
         # will take current health and combat type
         # returns a value for health
         text = self.combat_library[combat_type]['text']
-        weapons_list = self.combat_library[combat_type]['weapons'].keys()
-        weapons = []
-        for w in weapons_list:
-            weapons.append(w) 
+        weapons_list = self.combat_library[combat_type]['weapons'].keys() 
         enemy_health = self.combat_library[combat_type]['enemy']['health']
         enemy_accuracy = self.combat_library[combat_type]['enemy']['accuracy']
         enemy_attack1, enemy_attack2 = self.combat_library[combat_type]['enemy']['attack']
+        
         print(text)
         while health > 0 and enemy_health > 0:
-            weapon_choice = self.choice(weapons, '\n> ')
+            weapon_choice = self.choice(weapons_list, '\n> ')
             d, a = self.combat_library[combat_type]['weapons'][weapon_choice]
+            #unpacking damage and accuracy
+
             hit = randint(1,a) == 1
             enemy_hit = randint(1,enemy_accuracy) == 1
             if hit:
